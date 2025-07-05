@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Balcells</title>
+  <style>
+    @font-face {
+      font-family: 'Grift';
+      src: url('assets/fonts/Grift-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Grift';
+      src: url('assets/fonts/Grift-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Grift', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    header {
+      background-color: #f5f5f5;
+      padding: 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    nav {
+      background: #333;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      transition: background-color 0.6s, transform 0.6s;
+    }
+
+    section.highlight {
+      background-color: #e0e0e0;
+      transform: scale(1.02);
+    }
+
+    h2 {
+      font-weight: bold;
+      font-family: 'Grift';
+      font-size: 1.8rem;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    .timeline-horizontal {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      position: relative;
+    }
+
+    .timeline-horizontal::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+    }
+
+    .timeline-box {
+      text-align: center;
+      position: relative;
+      padding-top: 1.5rem;
+      width: 150px;
+      font-family: 'Grift';
+    }
+
+    .timeline-box::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background-color: #333;
+      border-radius: 50%;
+    }
+
+    .timeline-title {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+    }
+
+    footer {
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const section = document.getElementById(targetId);
+          if (section) {
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('highlight'));
+            section.classList.add('highlight');
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => section.classList.remove('highlight'), 1200);
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Lucas Balcells</h1>
+    <p>Account Director | Project Manager | Digital Strategist</p>
+  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+    <a href="portfolio.html">Portfolio</a>
+  </nav>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Multidisciplinary professional with extensive experience in account management, digital strategy, and team leadership. Known for delivering outstanding results through strategic thinking and collaborative execution.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline-horizontal">
+        <div class="timeline-box">
+          <div class="timeline-title">Jr. Digital Account Executive – JWT</div>
+          <div class="timeline-date">2017 – 2018</div>
+        </div>
+        <div class="timeline-box">
+          <div class="timeline-title">Account Executive – JWT</div>
+          <div class="timeline-date">2018 – 2019</div>
+        </div>
+        <div class="timeline-box">
+          <div class="timeline-title">Sr. Digital Account Manager – Nissan United</div>
+          <div class="timeline-date">2020 – 2021</div>
+        </div>
+        <div class="timeline-box">
+          <div class="timeline-title">Website Leader – Nissan United</div>
+          <div class="timeline-date">2021</div>
+        </div>
+        <div class="timeline-box">
+          <div class="timeline-title">Sr. Project Manager – Grey</div>
+          <div class="timeline-date">2021 – 2023</div>
+        </div>
+        <div class="timeline-box">
+          <div class="timeline-title">Account Director – Grey</div>
+          <div class="timeline-date">2023 – Present</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: lucasbalcells@gmail.com</p>
+      <p>Website: www.lucasbalcells.com</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Lucas Balcells</p>
+  </footer>
+</body>
+</html>

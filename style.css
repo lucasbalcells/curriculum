@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Grift';
+  src: url('assets/fonts/Grift-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Grift';
+  src: url('assets/fonts/Grift-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
