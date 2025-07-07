@@ -146,7 +146,49 @@
       text-align: center;
       padding: 1rem;
     }
+
+    /* 🌐 MOBILE RESPONSIVE TIMELINE */
+    @media only screen and (max-width: 768px) {
+      .timeline-horizontal {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .timeline-horizontal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 24px;
+        width: 3px;
+        height: 100%;
+        background-color: #333;
+      }
+
+      .timeline-box {
+        width: 100%;
+        max-width: 400px;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        text-align: left;
+        border-left: none;
+        position: relative;
+      }
+
+      .timeline-box::before {
+        top: 3.6rem;
+        left: -18px;
+        transform: translateY(0);
+      }
+
+      .timeline-title,
+      .timeline-date {
+        margin-left: 1rem;
+      }
+    }
   </style>
+
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('nav a[href^="#"]').forEach(link => {
@@ -165,17 +207,20 @@
     });
   </script>
 </head>
+
 <body>
   <header>
     <h1>Lucas Balcells</h1>
     <p>Account Director | Project Manager | Digital Strategist</p>
   </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
     <a href="portfolio.html">Portfolio</a>
   </nav>
+
   <main>
     <section id="about">
       <h2>About Me</h2>
@@ -218,6 +263,7 @@
       <p>Website: www.lucasbalcells.com</p>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Lucas Balcells</p>
   </footer>
