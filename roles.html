@@ -40,23 +40,29 @@
       font-weight: bold;
     }
 
-    nav {
-      background-color: #333;
-      color: white;
+    .btn-container {
       display: flex;
       justify-content: center;
-      padding: 0.5rem;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
     }
 
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-family: 'Grift';
+    .btn-nav {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .btn-nav:hover,
+    .btn-nav:active {
+      background-color: #333;
+      transform: scale(0.97);
     }
 
     main {
@@ -185,17 +191,17 @@
     }
 
     @media only screen and (max-width: 768px) {
-  .role-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
+      .role-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
-  .role-buttons button {
-    width: 100%;
-    text-align: left;
-    padding-left: 1.5rem;
-  }
-  }
+      .role-buttons button {
+        width: 100%;
+        text-align: left;
+        padding-left: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -203,10 +209,11 @@
     <h1>Roles</h1>
     <p>Selected Work and Projects</p>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#contact">Contact</a>
-  </nav>
+
+  <div class="btn-container">
+    <button class="btn-nav" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+
   <main>
     <section id="projects">
       <div class="role-buttons">
@@ -225,123 +232,19 @@
       <p>Website: www.lucasbalcells.github.io/curriculum</p>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2025 Lucas Balcells</p>
   </footer>
+
   <script>
     const content = {
-      jr: `<h2>Jr. Account Executive – JWT</h2>
-        <div class="project-container">
-          <div class="project">
-            <div class="horizontal-logos">
-              <img src="assets/logos/ford.jpg" alt="Ford">
-              <img src="assets/logos/savant.png" alt="Savant">
-            </div>
-            <img src="assets/logos/kitkat.jpg" alt="KitKat">
-            <h3>Ford / Savant / KitKat</h3>
-            <p>
-              Contributed to integrated communication pieces and brand adaptation.
-            </p>
-          </div>
-        </div>`,
-
-      ae: `<h2>Account Executive – JWT</h2>
-        <div class="project-container">
-          <div class="project">
-            <div class="horizontal-logos">
-              <img src="assets/logos/kitkat.jpg">
-              <img src="assets/logos/Clight.png">
-              <img src="assets/logos/Movenpick.jpg">
-              <img src="assets/logos/boost.png">
-            </div>
-            <h3>Kit Kat, Clight, Movenpick, Boost</h3>
-            <p>
-              Management and execution of 360 campaigns for the brands Clight, Kit Kat and Boost for Argentina and Movenpick for Switzerland.
-            </p>
-          </div>
-        </div>`,
-
-      sr: `<h2>Sr. Account Executive – Nissan United</h2>
-        <div class="project-container">
-          <div class="project">
-            <img src="assets/logos/nissan-logo-0-2.png">
-            <h3>Nissan United</h3>
-            <p>
-              Digital campaign executions for Nissan Argentina.<br>
-              Leadership in the maintenance and update of Nissan Argentina’s website.<br>
-              Team coordination in the implementation of new technological tools for the website.
-            </p>
-          </div>
-        </div>`,
-
-      website: `<h2>Website Leader – Nissan United</h2>
-        <div class="project-container">
-          <div class="project">
-            <img src="assets/logos/nissan-logo-0-2.png">
-            <h3>Nissan United</h3>
-            <p>
-              Team coordination for the maintenance of Nissan’s websites for four markets: Argentina, Chile, Peru and Brazil.<br>
-              Campaigns executions for new releases for the four markets.<br>
-              Technical support on AEM platform for the region.<br>
-              Leadership in the implementation of new technological tools for the websites of all markets.<br>
-              Management of UX/UI projects for the region.
-            </p>
-          </div>
-        </div>`,
-
-      spm: `<h2>Sr. Project Manager – Grey</h2>
-        <div class="project-container">
-          <div class="project">
-            <div class="logo-header">
-              <img src="assets/logos/haleon.jpg" alt="Haleon Logo">
-              <img src="assets/logos/cerveza-modelo-37859.png" alt="Modelo Logo">
-            </div>
-            <h3>Haleon / Modelo</h3>
-            <p>
-              Oversight and coordination of digital campaigns and communication strategies across all Haleon brands.<br>
-              Daily coordination with regional teams in LATAM, and global teams in the UK and USA.<br>
-              Timeline, scope, and resource management across multiple deliverables and markets.<br>
-              Supervision of content localization, performance tracking, and reporting.<br>
-              Cross-functional collaboration with creative, media and tech teams across time zones.<br>
-              Stakeholder alignment for approvals and project governance.
-            </p>
-            <div style="display:flex; flex-wrap:wrap; justify-content:center;">
-              <img src="assets/logos/Sensodyne.png">
-              <img src="assets/logos/parodontax.png">
-              <img src="assets/logos/Pronamel logo.avif">
-              <img src="assets/logos/tums.jpg">
-              <img src="assets/logos/otrivin.avif">
-              <img src="assets/logos/theraflu.webp">
-            </div>
-          </div>
-        </div>`,
-
-      director: `<h2>Account Director – Grey</h2>
-        <div class="project-container">
-          <div class="project">
-            <div class="logo-header">
-              <img src="assets/logos/haleon.jpg" alt="Haleon Logo">
-              <img src="assets/logos/cerveza-modelo-37859.png" alt="Modelo Logo">
-            </div>
-            <h3>Haleon / Modelo</h3>
-            <p>
-              Senior leadership of the Haleon account across LATAM.<br>
-              Strategic decision-making and consulting for brand development.<br>
-              Relationship management with senior stakeholders in the UK and USA.<br>
-              Revenue growth initiatives, team mentoring, and operational oversight.<br>
-              Integration of global brand strategy with local execution.<br>
-              Management of campaign impact, optimization and innovation roadmap.
-            </p>
-            <div style="display:flex; flex-wrap:wrap; justify-content:center;">
-              <img src="assets/logos/Sensodyne.png">
-              <img src="assets/logos/parodontax.png">
-              <img src="assets/logos/Pronamel logo.avif">
-              <img src="assets/logos/tums.jpg">
-              <img src="assets/logos/otrivin.avif">
-              <img src="assets/logos/theraflu.webp">
-            </div>
-          </div>
-        </div>`
+      jr: `<h2>Jr. Account Executive – JWT</h2><div class="project-container"><div class="project"><div class="horizontal-logos"><img src="assets/logos/ford.jpg" alt="Ford"><img src="assets/logos/savant.png" alt="Savant"></div><img src="assets/logos/kitkat.jpg" alt="KitKat"><h3>Ford / Savant / KitKat</h3><p>Contributed to integrated communication pieces and brand adaptation.</p></div></div>`,
+      ae: `<h2>Account Executive – JWT</h2><div class="project-container"><div class="project"><div class="horizontal-logos"><img src="assets/logos/kitkat.jpg"><img src="assets/logos/Clight.png"><img src="assets/logos/Movenpick.jpg"><img src="assets/logos/boost.png"></div><h3>Kit Kat, Clight, Movenpick, Boost</h3><p>Management and execution of 360 campaigns for the brands Clight, Kit Kat and Boost for Argentina and Movenpick for Switzerland.</p></div></div>`,
+      sr: `<h2>Sr. Account Executive – Nissan United</h2><div class="project-container"><div class="project"><img src="assets/logos/nissan-logo-0-2.png"><h3>Nissan United</h3><p>Digital campaign executions for Nissan Argentina.<br>Leadership in the maintenance and update of Nissan Argentina’s website.<br>Team coordination in the implementation of new technological tools for the website.</p></div></div>`,
+      website: `<h2>Website Leader – Nissan United</h2><div class="project-container"><div class="project"><img src="assets/logos/nissan-logo-0-2.png"><h3>Nissan United</h3><p>Team coordination for the maintenance of Nissan’s websites for four markets: Argentina, Chile, Peru and Brazil.<br>Campaigns executions for new releases for the four markets.<br>Technical support on AEM platform for the region.<br>Leadership in the implementation of new technological tools for the websites of all markets.<br>Management of UX/UI projects for the region.</p></div></div>`,
+      spm: `<h2>Sr. Project Manager – Grey</h2><div class="project-container"><div class="project"><div class="logo-header"><img src="assets/logos/haleon.jpg" alt="Haleon Logo"><img src="assets/logos/cerveza-modelo-37859.png" alt="Modelo Logo"></div><h3>Haleon / Modelo</h3><p>Oversight and coordination of digital campaigns and communication strategies across all Haleon brands.<br>Daily coordination with regional teams in LATAM, and global teams in the UK and USA.<br>Timeline, scope, and resource management across multiple deliverables and markets.<br>Supervision of content localization, performance tracking, and reporting.<br>Cross-functional collaboration with creative, media and tech teams across time zones.<br>Stakeholder alignment for approvals and project governance.</p><div style="display:flex; flex-wrap:wrap; justify-content:center;"><img src="assets/logos/Sensodyne.png"><img src="assets/logos/parodontax.png"><img src="assets/logos/Pronamel logo.avif"><img src="assets/logos/tums.jpg"><img src="assets/logos/otrivin.avif"><img src="assets/logos/theraflu.webp"></div></div></div>`,
+      director: `<h2>Account Director – Grey</h2><div class="project-container"><div class="project"><div class="logo-header"><img src="assets/logos/haleon.jpg" alt="Haleon Logo"><img src="assets/logos/cerveza-modelo-37859.png" alt="Modelo Logo"></div><h3>Haleon / Modelo</h3><p>Senior leadership of the Haleon account across LATAM.<br>Strategic decision-making and consulting for brand development.<br>Relationship management with senior stakeholders in the UK and USA.<br>Revenue growth initiatives, team mentoring, and operational oversight.<br>Integration of global brand strategy with local execution.<br>Management of campaign impact, optimization and innovation roadmap.</p><div style="display:flex; flex-wrap:wrap; justify-content:center;"><img src="assets/logos/Sensodyne.png"><img src="assets/logos/parodontax.png"><img src="assets/logos/Pronamel logo.avif"><img src="assets/logos/tums.jpg"><img src="assets/logos/otrivin.avif"><img src="assets/logos/theraflu.webp"></div></div></div>`
     };
 
     function showRole(role) {

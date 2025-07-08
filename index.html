@@ -20,7 +20,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     body {
@@ -39,230 +39,189 @@
     header h1 {
       margin: 0;
       font-size: 2.5rem;
+      font-family: 'Grift';
       font-weight: bold;
     }
 
-    nav {
-      background: #333;
-      color: #fff;
+    .subheader {
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    .about-section {
       display: flex;
+      align-items: center;
       justify-content: center;
-      padding: 0.5rem;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
+      gap: 2rem;
       padding: 2rem;
-      max-width: 1200px;
+      background-color: #f3f3f3;
+      flex-wrap: wrap;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
-    section {
-      margin-bottom: 2rem;
-      padding: 2rem;
-      background-color: #f0f0f0;
-      border-radius: 8px;
-      transition: background-color 0.6s, transform 0.6s;
+    .about-section img {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
-    section.highlight {
-      background-color: #e0e0e0;
+    .about-text {
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .experience-section {
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #333;
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      animation: breathing 4s ease-in-out infinite;
+      transition: transform 0.3s;
+      max-width: 1000px;
+    }
+
+    .experience-section:hover {
       transform: scale(1.02);
     }
 
-    h2 {
-      font-weight: bold;
-      font-family: 'Grift';
-      font-size: 1.8rem;
+    @keyframes breathing {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
     }
 
-    strong {
-      font-weight: bold;
-    }
-
-    .timeline-horizontal {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+    .timeline {
       margin-top: 2rem;
-      padding-top: 1rem;
       position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
 
-    .timeline-horizontal::before {
-      content: "";
+    .timeline::before {
+      content: '';
       position: absolute;
-      top: 20px;
+      top: 4px;
       left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #333;
+      right: 0;
+      height: 2px;
+      background-color: white;
+      z-index: 0;
     }
 
-    .timeline-box {
-      text-align: center;
+    .timeline-item {
       position: relative;
-      padding-top: 1.5rem;
-      width: 150px;
-      font-family: 'Grift';
+      background-color: transparent;
+      z-index: 1;
+      width: 140px;
     }
 
-    .timeline-box::before {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 16px;
-      background-color: #333;
+    .timeline-item::before {
+      content: '';
+      display: block;
+      margin: 0 auto 0.5rem;
+      width: 10px;
+      height: 10px;
+      background-color: white;
       border-radius: 50%;
     }
 
-    .timeline-title {
-      font-weight: bold;
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-
-    .timeline-date {
-      font-size: 0.85rem;
+    .timeline-item strong {
+      display: block;
+      margin-top: 1.5rem;
     }
 
     footer {
       background-color: #f5f5f5;
-      text-align: center;
       padding: 1rem;
     }
 
-    /* 🌐 MOBILE RESPONSIVE TIMELINE */
-    @media only screen and (max-width: 768px) {
-      .timeline-horizontal {
+    .contact-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #f3f3f3;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline {
         flex-direction: column;
-        align-items: center;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        align-items: flex-start;
+        padding-left: 40px;
       }
 
-      .timeline-horizontal::before {
-        content: "";
-        position: absolute;
+      .timeline::before {
+        left: 44px;
         top: 0;
-        left: 24px;
-        width: 3px;
         height: 100%;
-        background-color: #333;
+        width: 2px;
       }
 
-      .timeline-box {
+      .timeline-item {
         width: 100%;
-        max-width: 400px;
-        padding-top: 2rem;
-        padding-bottom: 1rem;
-        text-align: left;
-        border-left: none;
-        position: relative;
+        padding-left: 20px;
+        margin-bottom: 2rem;
       }
 
-      .timeline-box::before {
-        top: 3.6rem;
-        left: -18px;
-        transform: translateY(0);
-      }
-
-      .timeline-title,
-      .timeline-date {
-        margin-left: 1rem;
+      .timeline-item::before {
+        position: absolute;
+        left: 0;
+        top: 27px;
+        margin: 0;
       }
     }
   </style>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href').substring(1);
-          const section = document.getElementById(targetId);
-          if (section) {
-            document.querySelectorAll('section').forEach(sec => sec.classList.remove('highlight'));
-            section.classList.add('highlight');
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(() => section.classList.remove('highlight'), 1200);
-          }
-        });
-      });
-    });
-  </script>
 </head>
-
 <body>
   <header>
     <h1>Lucas Balcells</h1>
-    <p>Account Director | Project Manager | Digital Strategist</p>
+    <p class="subheader">Account Director | Project Manager | Digital Strategist</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-    <a href="roles.html">Roles</a>
-  </nav>
-
-  <main>
-    <section id="about">
+  <section class="about-section">
+    <img src="assets/profile-picture/Foto-perfil.png" alt="Lucas Balcells" />
+    <div class="about-text">
       <h2>About Me</h2>
       <p>Multidisciplinary professional with extensive experience in account management, digital strategy, and team leadership. Known for delivering outstanding results through strategic thinking and collaborative execution.</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline-horizontal">
-        <div class="timeline-box">
-          <div class="timeline-title">Jr. Digital Account Executive – JWT</div>
-          <div class="timeline-date">2017 – 2018</div>
-        </div>
-        <div class="timeline-box">
-          <div class="timeline-title">Account Executive – JWT</div>
-          <div class="timeline-date">2018 – 2019</div>
-        </div>
-        <div class="timeline-box">
-          <div class="timeline-title">Sr. Digital Account Manager – Nissan United</div>
-          <div class="timeline-date">2020 – 2021</div>
-        </div>
-        <div class="timeline-box">
-          <div class="timeline-title">Website Leader – Nissan United</div>
-          <div class="timeline-date">2021</div>
-        </div>
-        <div class="timeline-box">
-          <div class="timeline-title">Sr. Project Manager – Grey</div>
-          <div class="timeline-date">2021 – 2023</div>
-        </div>
-        <div class="timeline-box">
-          <div class="timeline-title">Account Director – Grey</div>
-          <div class="timeline-date">2023 – Present</div>
-        </div>
+  <section class="experience-section" onclick="location.href='roles.html'">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>Jr. Digital Account Executive – JWT</strong><br />2017 – 2018
       </div>
-    </section>
+      <div class="timeline-item">
+        <strong>Account Executive – JWT</strong><br />2018 – 2019
+      </div>
+      <div class="timeline-item">
+        <strong>Sr. Digital Account Manager – Nissan United</strong><br />2020 – 2021
+      </div>
+      <div class="timeline-item">
+        <strong>Website Leader – Nissan United</strong><br />2021
+      </div>
+      <div class="timeline-item">
+        <strong>Sr. Project Manager – Grey</strong><br />2021 – 2023
+      </div>
+      <div class="timeline-item">
+        <strong>Account Director – Grey</strong><br />2023 – Present
+      </div>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: balcellslucasn@gmail.com</p>
-      <p>Website: www.lucasbalcells.github.io/curriculum</p>
-    </section>
-  </main>
+  <section class="contact-section">
+    <h2>Contact</h2>
+    <p>Email: balcellslucasn@gmail.com</p>
+    <p>Website: www.lucasbalcells.com</p>
+  </section>
 
   <footer>
     <p>&copy; 2025 Lucas Balcells</p>
