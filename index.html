@@ -88,6 +88,20 @@
       transform: scale(1.02);
     }
 
+    .experience-section h2 + p.cta-text {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: white;
+    }
+
+    .desktop-only {
+      display: block;
+    }
+
+    .mobile-only {
+      display: none;
+    }
+
     @keyframes breathing {
       0% { transform: scale(1); }
       50% { transform: scale(1.03); }
@@ -151,6 +165,18 @@
     }
 
     @media (max-width: 768px) {
+      .experience-section {
+        margin: 2rem 1rem;
+      }
+
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: block;
+      }
+
       .timeline {
         flex-direction: column;
         align-items: flex-start;
@@ -158,7 +184,7 @@
       }
 
       .timeline::before {
-        left: 44px;
+        left: 24px;
         top: 0;
         height: 100%;
         width: 2px;
@@ -166,14 +192,14 @@
 
       .timeline-item {
         width: 100%;
-        padding-left: 20px;
+        padding-left: 10px;
         margin-bottom: 2rem;
       }
 
       .timeline-item::before {
         position: absolute;
-        left: 0;
-        top: 27px;
+        left: -20px;
+        top: 25px;
         margin: 0;
       }
     }
@@ -195,6 +221,8 @@
 
   <section class="experience-section" onclick="location.href='roles.html'">
     <h2>Experience</h2>
+    <p class="cta-text desktop-only">Click for more information</p>
+    <p class="cta-text mobile-only">Tap for more information</p>
     <div class="timeline">
       <div class="timeline-item">
         <strong>Jr. Digital Account Executive – JWT</strong><br />2017 – 2018
