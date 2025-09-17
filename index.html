@@ -79,8 +79,8 @@
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
       cursor: pointer;
-      animation: breathing 4s ease-in-out infinite;
-      transition: transform 0.3s;
+      animation: breathing 2s ease-in-out infinite;
+      transition: transform 0.1s;
       max-width: 1000px;
     }
 
@@ -114,7 +114,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 1rem;
     }
 
@@ -134,6 +134,7 @@
       background-color: transparent;
       z-index: 1;
       width: 140px;
+      text-align: center;
     }
 
     .timeline-item::before {
@@ -208,7 +209,7 @@
 <body>
   <header>
     <h1>Lucas Balcells</h1>
-    <p class="subheader">Account Director | Project Manager | Digital Strategist</p>
+    <p class="subheader">Account Director | Creative Project Manager | Digital Strategist</p>
   </header>
 
   <section class="about-section">
@@ -223,26 +224,30 @@
     <h2>Experience</h2>
     <p class="cta-text desktop-only">Click for more information</p>
     <p class="cta-text mobile-only">Tap for more information</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <strong>Jr. Digital Account Executive – JWT</strong><br />2017 – 2018
-      </div>
-      <div class="timeline-item">
-        <strong>Account Executive – JWT</strong><br />2018 – 2019
-      </div>
-      <div class="timeline-item">
-        <strong>Sr. Digital Account Manager – Nissan United</strong><br />2020 – 2021
-      </div>
-      <div class="timeline-item">
-        <strong>Website Leader – Nissan United</strong><br />2021
-      </div>
-      <div class="timeline-item">
-        <strong>Sr. Project Manager – Grey</strong><br />2021 – 2023
-      </div>
-      <div class="timeline-item">
-        <strong>Account Director – Grey</strong><br />2023 – Present
-      </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <strong>Jr. Digital Account Executive – JWT</strong><br />2017 – 2018
     </div>
+    <div class="timeline-item">
+      <strong>Account Executive – JWT</strong><br />2018 – 2019
+    </div>
+    <div class="timeline-item">
+      <strong>Sr. Digital Account Manager – Nissan United</strong><br />2020 – 2021
+    </div>
+    <div class="timeline-item">
+      <strong>Website Leader – Nissan United</strong><br />2021
+    </div>
+    <div class="timeline-item">
+      <strong>Sr. Project Manager – Grey</strong><br />2021 – 2023
+    </div>
+    <div class="timeline-item">
+      <strong>Account Director – Grey</strong><br />2023 – 2025
+    </div> <!-- ESTE FALTABA -->
+    <div class="timeline-item">
+      <strong>CPM – Superside</strong><br />2025 – Present
+    </div>
+  </div>
+
   </section>
 
   <section class="contact-section">
