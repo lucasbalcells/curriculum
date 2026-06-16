@@ -461,4 +461,8 @@ footer {
     text-align: left;
     padding-left: 1.5rem;
   }
+  
+  .timeline {
+  flex-direction: column-reverse;
+  }
 }
