@@ -203,6 +203,11 @@ header h1 {
   padding: 0.5rem;
 }
 
+.featured-logos img.dropbox-logo {
+  max-width: 160px;
+  max-height: 80px;
+}
+
 .more-experience-note {
   margin-top: 1.5rem;
   font-size: 0.9rem;
@@ -427,6 +432,22 @@ footer {
     padding: 1rem;
   }
 
+  .featured-logos {
+    gap: 0.6rem;
+  }
+
+  .featured-logos img {
+    max-width: 88px;
+    max-height: 42px;
+    padding: 0.4rem;
+  }
+
+  .featured-logos img.dropbox-logo {
+    max-width: 95px !important;
+    max-height: 45px !important;
+    padding: 0.35rem !important;
+  }
+
   .role-buttons {
     flex-direction: column;
     align-items: stretch;
@@ -437,29 +458,4 @@ footer {
     text-align: left;
     padding-left: 1.5rem;
   }
- 
-  .dropbox-logo {
-  max-width: 160px;
-  max-height: 80px;
-  }
-
-  img.dropbox-logo {
-  max-width: 250px !important;
-  max-height: 100px !important;
-  transform: scale(1.5);
-  }
-
-@media (max-width: 768px) {
-
-  .featured-logos img {
-    max-width: 95px;
-    max-height: 48px;
-  }
-
-  .dropbox-logo {
-    max-width: 95px !important;
-    max-height: 45px !important;
-  }
-  } 
-
 }
