@@ -439,8 +439,8 @@ footer {
   }
  
   .dropbox-logo {
-  max-width: 250px !important;
-  max-height: 150px !important;
+  max-width: 160px;
+  max-height: 80px;
   }
 
   img.dropbox-logo {
@@ -448,4 +448,20 @@ footer {
   max-height: 100px !important;
   transform: scale(1.5);
   }
+
+@media (max-width: 768px) {
+
+  .featured-logos img {
+    max-width: 90px;
+    max-height: 40px;
+  }
+
+  .dropbox-logo {
+    max-width: 140px !important;
+    max-height: 70px !important;
+  }
+
+  }
+
+
 }
