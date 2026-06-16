@@ -4,211 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucas Balcells</title>
-  <style>
-    @font-face {
-      font-family: 'Grift';
-      src: url('assets/fonts/Grift-Regular.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    @font-face {
-      font-family: 'Grift';
-      src: url('assets/fonts/Grift-Bold.otf') format('opentype');
-      font-weight: bold;
-      font-style: normal;
-    }
-
-    html {
-      scroll-behavior: auto;
-    }
-
-    body {
-      font-family: 'Grift', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #fff;
-    }
-
-    header {
-      background-color: #f5f5f5;
-      padding: 2rem;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      font-family: 'Grift';
-      font-weight: bold;
-    }
-
-    .subheader {
-      margin-top: 0.5rem;
-      color: #555;
-    }
-
-    .about-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem;
-      background-color: #f3f3f3;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .about-section img {
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .about-text {
-      max-width: 500px;
-      text-align: left;
-    }
-
-    .experience-section {
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #333;
-      color: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      animation: breathing 4s ease-in-out infinite;
-      transition: transform 0.3s;
-      max-width: 1000px;
-    }
-
-    .experience-section:hover {
-      transform: scale(1.02);
-    }
-
-    .experience-section h2 + p.cta-text {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      color: white;
-    }
-
-    .desktop-only {
-      display: block;
-    }
-
-    .mobile-only {
-      display: none;
-    }
-
-    @keyframes breathing {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
-    }
-
-    .timeline {
-      margin-top: 2rem;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: white;
-      z-index: 0;
-    }
-
-    .timeline-item {
-      position: relative;
-      background-color: transparent;
-      z-index: 1;
-      width: 140px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      display: block;
-      margin: 0 auto 0.5rem;
-      width: 10px;
-      height: 10px;
-      background-color: white;
-      border-radius: 50%;
-    }
-
-    .timeline-item strong {
-      display: block;
-      margin-top: 1.5rem;
-    }
-
-    footer {
-      background-color: #f5f5f5;
-      padding: 1rem;
-    }
-
-    .contact-section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #f3f3f3;
-      border-radius: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .experience-section {
-        margin: 2rem 1rem;
-      }
-
-      .desktop-only {
-        display: none;
-      }
-
-      .mobile-only {
-        display: block;
-      }
-
-      .timeline {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 40px;
-      }
-
-      .timeline::before {
-        left: 24px;
-        top: 0;
-        height: 100%;
-        width: 2px;
-      }
-
-      .timeline-item {
-        width: 100%;
-        padding-left: 10px;
-        margin-bottom: 2rem;
-      }
-
-      .timeline-item::before {
-        position: absolute;
-        left: -20px;
-        top: 25px;
-        margin: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header>
     <h1>Lucas Balcells</h1>
-    <p class="subheader">Account Director | Project Manager | Digital Strategist</p>
+    <p class="subheader">Sr. Creative Project Manager</p>
   </header>
 
   <section class="about-section">
@@ -221,28 +22,38 @@
 
   <section class="experience-section" onclick="location.href='roles.html'">
     <h2>Experience</h2>
-    <p class="cta-text desktop-only">Click for more information</p>
-    <p class="cta-text mobile-only">Tap for more information</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <strong>Jr. Digital Account Executive – JWT</strong><br />2017 – 2018
-      </div>
-      <div class="timeline-item">
-        <strong>Account Executive – JWT</strong><br />2018 – 2019
-      </div>
-      <div class="timeline-item">
-        <strong>Sr. Digital Account Manager – Nissan United</strong><br />2020 – 2021
-      </div>
-      <div class="timeline-item">
-        <strong>Website Leader – Nissan United</strong><br />2021
-      </div>
-      <div class="timeline-item">
-        <strong>Sr. Project Manager – Grey</strong><br />2021 – 2023
-      </div>
-      <div class="timeline-item">
-        <strong>Account Director – Grey</strong><br />2023 – Present
+    <p class="cta-text desktop-only">Click for full career history</p>
+    <p class="cta-text mobile-only">Tap for full career history</p>
+
+    <div class="featured-role">
+      <h3>Sr. Creative Project Manager – Superside</h3>
+      <p>Leading creative projects for global brands across digital campaigns, content production, creative operations, and cross-functional delivery.</p>
+      <div class="featured-logos">
+        <img src="assets/logos/dropbox.png" alt="Dropbox" class="dropbox-logo">
+        <img src="assets/logos/tastytrade.png" alt="tastytrade">
+        <img src="assets/logos/wikimedia-foundation.png" alt="Wikimedia Foundation">
+        <img src="assets/logos/ecovadis.png" alt="EcoVadis">
+        <img src="assets/logos/surveymonkey.png" alt="SurveyMonkey">
+        <img src="assets/logos/rakuten-kobo.png" alt="Rakuten Kobo">
       </div>
     </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>JWT</strong><br />2017 – 2019
+      </div>
+      <div class="timeline-item">
+        <strong>Nissan United</strong><br />2020 – 2021
+      </div>
+      <div class="timeline-item">
+        <strong>Grey</strong><br />2021 – 2025
+      </div>
+      <div class="timeline-item current">
+        <strong>Sr. Creative PM – Superside</strong><br />2025 – Present<br />
+        <span class="current-badge">Current</span>
+      </div>
+    </div>
+    <p class="more-experience-note">Full role-by-role experience available inside Roles.</p>
   </section>
 
   <section class="contact-section">
