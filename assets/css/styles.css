@@ -394,38 +394,40 @@ footer {
   }
 
   .timeline {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 40px;
+    gap: 0.8rem;
+    padding-left: 0;
+    margin-top: 2rem;
   }
 
   .timeline::before {
-    left: 24px;
-    top: 0;
-    height: 100%;
-    width: 2px;
+    display: none;
   }
 
-  .timeline-item {
-    width: 100%;
-    padding-left: 10px;
-    margin-bottom: 2rem;
-  }
-
-  .timeline-item::before {
-    position: absolute;
-    left: -20px;
-    top: 25px;
-    margin: 0;
-  }
-
+  .timeline-item,
   .timeline-item.current {
-    width: 100%;
+    width: auto;
+    padding: 1rem;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    text-align: left;
   }
 
+  .timeline-item::before,
   .timeline-item.current::before {
-    left: -23px;
-    top: 24px;
+    display: none;
+  }
+
+  .timeline-item strong {
+    margin-top: 0;
+    font-size: 1.05rem;
+  }
+
+  .current-badge {
+    margin-top: 0.8rem;
   }
 
   .featured-role {
